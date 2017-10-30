@@ -1,0 +1,23 @@
+<h1>Who wants to make words??</h1>
+<table>
+  <tr>
+    <%= @start_time %>
+    <% @grid.each do |letter| %>
+      <td><%= letter %></td>
+    <% end %>
+  </tr>
+</table>
+
+<hr>
+
+<form action="/score">
+  <label for="question">Gimme wordzz</label>
+  <input type="date" name="start_time" value="<%= @start_time %>" hidden>
+  <input type="date" name="grid" value="<%= @grid_joined %>" hidden>
+
+  <input type="text" id="question" name="attempt" placeholder="your answer here">
+  <input type="submit" value="do tha check">
+</form>
+
+
+<p>Find me in app/views/games/game.html.erb</p>
